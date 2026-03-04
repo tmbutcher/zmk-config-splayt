@@ -1,0 +1,4 @@
+name: zmk-keyboard-splayt
+build:
+  settings:
+    board_root: .

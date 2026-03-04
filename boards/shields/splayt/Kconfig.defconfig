@@ -1,0 +1,45 @@
+if SHIELD_SPLAYT_LEFT
+
+# Name must be less than 16 characters long!
+config ZMK_KEYBOARD_NAME
+    default "Splayt"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+  default 1
+
+config BT_MAX_CONN
+  default 6
+
+config BT_MAX_PAIRED
+  default 6
+
+endif
+
+if SHIELD_SPLAYT_LEFT || SHIELD_SPLAYT_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+config ZMK_POINTING
+    default y
+
+endif
+
+# ---------------------
+# Kconfig for shield "splayt_right" with board "nice_nano_v2"
+# ---------------------
+if BOARD_NICE_NANO_V2 && SHIELD_SPLAYT_RIGHT
+
+config SPI
+    default y
+
+config PMW3610
+    default y
+
+config WS2812_STRIP
+    default y
+
+endif

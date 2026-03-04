@@ -1,0 +1,6 @@
+config SHIELD_SPLAYT_LEFT
+    def_bool $(shields_list_contains,splayt_left)
+  
+config SHIELD_SPLAYT_RIGHT
+    def_bool $(shields_list_contains,splayt_right)
+  
