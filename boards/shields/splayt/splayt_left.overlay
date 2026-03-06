@@ -1,28 +1,7 @@
 #include "splayt.dtsi"
 
 / {
-kscan0: kscan_composite {
-        compatible = "zmk,kscan-composite";
-        rows = <6>;
-        columns = <10>;
-
-        // Include the matrix driver
-        matrix {
-            kscan = <&kscan1>;
-        };
-
-        // Include the direct GPIO driver...
-        direct {
-            kscan = <&kscan2>;
-            row-offset = <5>; // ...and shift it to not overlap
-        };
-    };
-
-    kscan1: kscan_matrix {
-        compatible = "zmk,kscan-gpio-matrix";
-        diode-direction = "col2row";
-        wakeup-source;
-
+    &kscan1 {
         col-gpios
             = <&pro_micro 21 GPIO_ACTIVE_HIGH>
             , <&pro_micro 20 GPIO_ACTIVE_HIGH>
@@ -30,21 +9,6 @@ kscan0: kscan_composite {
             , <&pro_micro 18 GPIO_ACTIVE_HIGH>
             , <&pro_micro 15 GPIO_ACTIVE_HIGH>
             ;
-
-        row-gpios
-            = <&pro_micro 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            ;
-    };
-
-    kscan2: kscan_direct {
-        compatible = "zmk,kscan-gpio-direct";
-        wakeup-source;
-        input-gpios
-            = <&pro_micro 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
     };
 };
 
