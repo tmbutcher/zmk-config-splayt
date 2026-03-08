@@ -5,7 +5,7 @@
     chosen {
         zmk,kscan = &kscan0;
         zmk,physical-layout = &physical_layout_splayt;
-        zmk,matrix_transform = &matrix_transform0;
+        // zmk,matrix_transform = &matrix_transform0;
         // Other chosen items
     };
 
@@ -122,9 +122,9 @@
         device = <&input_split_right0>;
     };
 
-    // trackball_listener {
-    // compatible = "zmk,input-listener";
-    // device = <&trackball>;
-    // };
+    trackball_listener {
+    compatible = "zmk,input-listener";
+    device = <&trackball>;
+    };
 };
 

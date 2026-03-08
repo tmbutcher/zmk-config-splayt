@@ -92,7 +92,8 @@ nice_view_spi: &spi0 { };
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 
 &spi1 {
-    input_device_right0: input_device_right0@0 {
+    // input_device_right0: input_device_right0@0 {
+    trackball: trackball@0 {
         status = "okay";
         compatible = "pixart,pmw3610";
         reg = <0>;
