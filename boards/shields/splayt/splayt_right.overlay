@@ -28,7 +28,8 @@
 // Adding input devices and assigning them to input-split
 &input_split_right0 {
     status = "okay";
-    device = <&input_device_right0>;
+    // device = <&input_device_right0>;
+    device = <&trackball>;
 };
 
 &encoder_right0 {
